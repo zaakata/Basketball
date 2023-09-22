@@ -109,7 +109,7 @@ public class BasketballGame {
         Team opponentTeam = (currentTeam == team1) ? team2 : team1;
         Player attacker = currentTeam.getRandomPlayer();
         Player deffender = opponentTeam.getRandomPlayer();
-        mod = random.nextInt(100) + (attacker.getAttack() - deffender.getDefense());
+        mod = random.nextInt(100) + ((attacker.getAttack()/2)+(attacker.getRating()/2) - deffender.getDefense());
         gui.updateGameLog(currentTeam.getName() + " ma piłkę. (" + attacker.getLastName() + ")");
             
         if (mod < 30) {
